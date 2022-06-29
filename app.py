@@ -1,7 +1,6 @@
 from flask import Flask
 from flask import render_template
 from flask import request
-from threading import Thread
 
 app = Flask(__name__)
 log_num = 0
@@ -40,12 +39,3 @@ def home():
 
 def run():
     app.run(host='0.0.0.0', port=8080)
-
-
-def Start():
-    t = Thread(target=run)
-    t.start()
-
-
-if __name__ == '__main__':
-    Start()
