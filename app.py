@@ -34,7 +34,8 @@ def home():
     storeData()
     x_ip = request.environ.get('HTTP_X_FORWARDED_FOR', request.remote_addr)
     writeNew(f'IP {log_num}: {x_ip}')
-    return render_template('page.html')
+    # return render_template('page.html')
+    return redirect("https://www.youtube.com/", code=302)
 
 
 def run():
