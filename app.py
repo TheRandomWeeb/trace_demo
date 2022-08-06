@@ -1,10 +1,10 @@
-from flask import Flask, redirect, request
+from flask import Flask, redirect, request, render_template
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://cwkuktrakwieja:016c01c9c5a823a9556c63f0660d9f805aa7b614ab525daf6ad30dead62b2fbb@ec2-3-219-229-143.compute-1.amazonaws.com:5432/d1scl9b4lktjgj'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://mrgofcieaevokn:79860ece3e6520c0b1637a789dbc877de7dfc07d414b81170815d514d28e8b2a@ec2-18-214-35-70.compute-1.amazonaws.com:5432/d2dr62o56dm2h8'
 
 db = SQLAlchemy(app)
 
@@ -23,7 +23,8 @@ def home():
     db.session.add(ipTable)
     db.session.commit()
 
-    return redirect("https://www.youtube.com/watch?v=dQw4w9WgXcQ", code=302)
+    # return redirect("https://www.youtube.com/watch?v=dQw4w9WgXcQ", code=302)
+    return render_template('page.html')
 
 
 def run():
